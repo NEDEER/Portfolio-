@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #0a0a0a;
+    color: #ffffff;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Prevent scrolling when intro is shown */
+body.intro-active {
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* Ensure intro page is perfectly centered */
+.intro-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Custom button styles */
+.btn {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-family: 'Orbitron', monospace;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #00ffff 0%, #00cccc 100%);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #00cccc 0%, #009999 100%);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid #00ffff;
+    color: #00ffff;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+.btn-secondary:hover {
+    background: #00ffff;
+    color: #000000;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+    transform: translateY(-2px);
+}
+
+.light-rays-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.custom-rays {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+    }
+    to {
+        text-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff;
+    }
+}
+
+.animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0;
+    }
+}
